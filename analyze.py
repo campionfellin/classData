@@ -21,7 +21,7 @@ with open('dataclasses.csv', 'rb') as f:
 	numAvg = 0
 	for row in reader:
 		if row[2].lower().find(className) != -1 and row[4].lower().find(profe) != -1:
-			print row[3] + "(" + row[2]  + ") taught by " + row[4] + " had an average grade of " + row[19] + " for the quarter of " + row[1][7:len(row[1])-1]
+			print row[2]  + " taught by " + row[4][:row[4].find(",")] + " had an average grade of " + row[19] + " for the quarter of " + row[1][7:len(row[1])-1] + " out of " + row[5] + " students"
 			print
 			print
 			totAvg = totAvg + float(row[19])
